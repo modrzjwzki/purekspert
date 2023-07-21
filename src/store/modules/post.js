@@ -21,7 +21,9 @@ const getters = {
       !Number.isInteger(limit) ||
       typeof limit == 'undefined'
     ) {
+      console.log(state.recent)
       return state.recent;
+
     }
     let recent = state.recent;
     return recent.slice(0, limit);
@@ -37,6 +39,7 @@ const actions = {
       posts.map((post, i) => {
         posts[i] = createPostSlug(post);
       });
+
 
       commit(types.STORE_FETCHED_POSTS, { posts });
       commit(types.POSTS_LOADED, true);

@@ -1,10 +1,20 @@
 <template>
   <div class="bv-example-row pt-4">
     <template v-if="post">
-      <h1>{{ post.title.rendered }}</h1>
-      <div v-html="post.content.rendered"></div>
+      <PageTitle :title="post.title.rendered" height="400" :background="true"></PageTitle>
+
+      <div class="content container mx-auto pt-4 mb-5">
+        <div class="grid md:grid-cols-6 gap-2">
+
+
+          <div class="page-content col-span-4 p-4" v-html="post.content.rendered">
+
+
+          </div>
+
+        </div>
+      </div>
     </template>
-    <Loader v-else/>
   </div>
 </template>
 
@@ -13,6 +23,7 @@ import axios from "axios";
 import Loader from "../partials/Loader.vue";
 import { mapGetters } from "vuex";
 import SETTINGS from "../../settings";
+import PageTitle from "../partials/PageTitle.vue";
 
 export default {
   data() {
@@ -43,6 +54,7 @@ export default {
   },
 
   components: {
+    PageTitle,
     Loader
   }
 };

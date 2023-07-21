@@ -13,6 +13,7 @@ const getters = {
   allPages: state => state.all,
   allPagesLoaded: state => state.loaded,
   page: state => id => {
+    console.log(state)
     let field = typeof id === 'number' ? 'id' : 'slug';
     let page = state.all.filter(page => page[field] === id);
     return (page[0]) ? page[0] : false;

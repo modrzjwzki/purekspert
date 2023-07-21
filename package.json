@@ -16,6 +16,7 @@
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
+    "copy-webpack-plugin": "4.5.4",
     "cross-env": "^3.2.4",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
@@ -53,8 +54,15 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "leaflet": "^1.9.4",
     "stylelint-order": "^4.0.0",
     "tailwindcss": "^1.1.4",
-    "vue": "^2.6"
+    "vue": "^2.6",
+    "vue-lazytube": "^1.1.1",
+    "vue-material": "^1.0.0-beta-16",
+    "vue-number-animation": "^1.1.2",
+    "vue-youtube-embed": "^2.2.2",
+    "vue2-google-maps": "^0.10.7",
+    "vue2-leaflet": "^2.7.1"
   }
 }

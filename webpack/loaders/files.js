@@ -1,12 +1,12 @@
 const [, themeName] = __dirname.match(/\/wp-content\/themes\/([^/]+)\/webpack\/loaders$/)
 module.exports = {
-  test: /\.(png|svg|jpg|gif)$/,
+  test: /\.(png|svg|jpg|gif|jpeg)$/,
   use: [
     {
-      loader: 'file-loader',
+      loader: 'file-loader?name=app/images/[name].[ext]',
       options: {
-        name: 'img/[name].[ext]',
-        publicPath: `/wp-content/themes/${themeName}/dist`
+        name: `/wp-content/themes/${themeName}/dist/img/[name].[ext]`,
+        // publicPath: `/wp-content/themes/${themeName}/dist`
       }
     }
   ]

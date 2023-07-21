@@ -50,12 +50,15 @@ export default {
 
   methods: {
     getAuthor(post) {
-      console.log(post);
+      return post.author
     },
   },
 
   mounted() {
     this.$store.dispatch('getPosts', { limit: this.limit });
+
+    console.log(this.recentPosts(5))
+
   },
 };
 </script>

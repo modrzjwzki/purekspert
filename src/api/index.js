@@ -35,6 +35,7 @@ export default {
       .get(SETTINGS.API_BASE_PATH + 'pages/' + id)
       .then(response => {
         cb(response.data);
+        console.log(response.data)
       })
       .catch(e => {
         cb(e);
@@ -46,9 +47,47 @@ export default {
       .get(SETTINGS.API_BASE_PATH + 'posts?per_page=' + limit)
       .then(response => {
         cb(response.data);
+        console.log(response.data)
+
       })
       .catch(e => {
         cb(e);
       });
   },
+
+  getSettings(cb) {
+    axios.
+      get(SETTINGS.API_BASE_PATH + 'settings')
+        .then(response => {
+      cb(response.data)
+    }).catch(e => {
+      cb(e);
+    })
+  },
+
+  getAuthor(id, cb) {
+    axios.get(SETTINGS.API_BASE_PATH + 'users/' + id).
+    then(response => {
+      cb(response.data)
+    }).catch(e => {
+      cb(e)
+    })
+  },
+
+  getMenus(cb) {
+    axios
+        .get(  SETTINGS.API_MENUS_PATH + 'menus/3')
+        .then(response => {
+          cb(response)
+        })
+        .catch(e => cb(e))
+  },
+
+  getPostsByCategory(category, cb) {
+    axios.get(`posts?category_slug=${category}`)
+        .then(response => {
+          cb(response)
+        })
+        .catch(e => cb(e))
+  }
 };

@@ -34,7 +34,7 @@ module.exports = {
       ? []
       : [
           new UglifyJsPlugin({
-            // include: [path.resolve(__dirname, '../src')],
+            include: [path.resolve(__dirname, '../src')],
             cache: true,
             parallel: true,
             extractComments: true,

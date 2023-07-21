@@ -8,8 +8,13 @@ import user from './modules/user'
 import post from './modules/post'
 import page from './modules/page'
 import categories from './modules/categories'
+import menus from './modules/menus'
+import VueNumber from 'vue-number-animation'
 
+Vue.use(VueNumber)
 Vue.use(Vuex)
+
+
 
 const debug = process.env.NODE_ENV !== 'production'
 
@@ -23,11 +28,12 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    hub,
-    user,
-    post,
-    page,
-    categories
+      menus,
+      hub,
+      user,
+      post,
+      page,
+      categories,
   },
   strict: debug,
   plugins: [localStorage]
